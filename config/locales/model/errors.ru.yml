@@ -9,3 +9,6 @@ ru:
           blank: 'Укажите свою почту'
         password:
           blank: 'Пароль не может быть пустым'
+      user_session:
+        uuid:
+          blank: 'Отсутствует uuid'

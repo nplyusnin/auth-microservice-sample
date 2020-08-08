@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UserRoutes, type: :routes do
   describe 'POST /v1' do
     context 'missing parameters' do
