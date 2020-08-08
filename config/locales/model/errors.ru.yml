@@ -6,3 +6,7 @@ ru:
           blank: 'Укажите своё имя'
         email:
           blank: 'Укажите свою почту'
+        password:
+          blank: 'Пароль не может быть пустым'
+        password_confirmation:
+          blank: 'Подтверждение пароля не может быть пустым'

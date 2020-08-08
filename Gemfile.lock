@@ -8,6 +8,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     backports (3.18.1)
+    bcrypt (3.1.15)
     concurrent-ruby (1.1.6)
     config (2.2.1)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -91,6 +92,9 @@ GEM
     rspec-support (3.9.3)
     ruby2_keywords (0.0.2)
     sequel (5.35.0)
+    sequel_secure_password (0.2.15)
+      bcrypt (>= 3.1, < 4.0)
+      sequel (>= 4.1.0, < 6.0)
     sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -127,6 +131,7 @@ DEPENDENCIES
   rake
   rspec
   sequel
+  sequel_secure_password
   sinatra
   sinatra-contrib
 

@@ -15,6 +15,7 @@ gem 'i18n'
 
 gem 'pg'
 gem 'sequel'
+gem 'sequel_secure_password'
 
 gem 'dry-initializer'
 gem 'dry-validation'
