@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Users::CreateService do
   subject { described_class }
 

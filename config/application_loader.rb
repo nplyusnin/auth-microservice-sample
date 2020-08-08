@@ -21,7 +21,10 @@ module ApplicationLoader
   end
 
   def require_app
-    require_file 'config/application.rb'
+    require_file 'app/helpers/validations'
+    require_dir 'app/helpers'
+    require_file 'config/application'
+    require_file 'app/services/basic_service'
     require_dir 'app'
   end
 
