@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 namespace :db do
+  require 'sequel/core'
+
   desc 'Run database migrations'
   task :migrate, %i[version] => :settings do |_t, args|
-    require 'sequel/core'
     Sequel.extension :migration
 
     Sequel.connect(Settings.db.to_hash) do |db|
@@ -11,6 +12,20 @@ namespace :db do
       version = args.version.to_i if args.version
 
       Sequel::Migrator.run(db, migrations, target: version)
+    end
+
+    Rake::Task['db:schema:dump'].execute
+  end
+
+  namespace :schema do
+    desc 'Generate database schema'
+    task dump: :settings do
+      Sequel.connect(Settings.db.to_hash) do |db|
+        dump_file = File.expand_path('../../db/schema.rb', __dir__)
+        db.extension(:schema_dumper)
+
+        File.write(dump_file, db.dump_schema_migration)
+      end
     end
   end
 end
