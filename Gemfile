@@ -23,6 +23,10 @@ gem 'dry-validation'
 gem 'activesupport'
 gem 'fast_jsonapi'
 
+group :development do
+  gem 'sequel-seed'
+end
+
 group :test do
   gem 'database_cleaner-sequel'
   gem 'factory_bot'

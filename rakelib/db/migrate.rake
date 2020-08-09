@@ -17,6 +17,18 @@ namespace :db do
     Rake::Task['db:schema:dump'].execute
   end
 
+  desc 'Run database seeds'
+  task seed: :environment do
+    require 'sequel/extensions/seed'
+
+    Sequel.extension :seed
+
+    Sequel.connect(Settings.db.to_hash) do |db|
+      seeds_dir = File.expand_path('../../db/seeds', __dir__)
+      Sequel::Seeder.apply(db, seeds_dir)
+    end
+  end
+
   namespace :schema do
     desc 'Generate database schema'
     task dump: :settings do
