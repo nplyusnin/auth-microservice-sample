@@ -3,7 +3,7 @@
 class UserSession < Sequel::Model
   plugin :uuid
 
-  one_to_one :user
+  many_to_one :user
 
   def validate
     super

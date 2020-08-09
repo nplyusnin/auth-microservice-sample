@@ -9,4 +9,4 @@ RSpec.configure do |config|
 end
 
 FactoryBot.use_parent_strategy = false
-FactoryBot.define { to_create(&:save) }
+FactoryBot.define { to_create { |model| model.save } }
