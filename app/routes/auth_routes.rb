@@ -3,7 +3,7 @@
 class AuthRoutes < Application
   AUTH_TOKEN = /\ABearer (?<token>.+)\z/.freeze
 
-  post '/v1' do
+  post '/' do
     result = Auth::FetchUserService.call(extracted_token['uuid'])
 
     if result.success?
@@ -29,6 +29,6 @@ class AuthRoutes < Application
   end
 
   def auth_header
-    request.env['Authorization']
+    request.env['HTTP_AUTHORIZATION']
   end
 end

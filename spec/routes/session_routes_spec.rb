@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 RSpec.describe SessionRoutes, type: :routes do
-  describe 'POST /v1' do
+  describe 'POST /' do
     context 'missing parameters' do
       it 'returns an error' do
-        post '/v1', email: 'bob@example.com', password: ''
+        post '/', email: 'bob@example.com', password: ''
 
         expect(last_response.status).to eq(422)
       end
@@ -12,7 +12,7 @@ RSpec.describe SessionRoutes, type: :routes do
 
     context 'invalid parameters' do
       it 'returns an error' do
-        post '/v1', email: 'bob@example.com', password: 'invalid'
+        post '/', email: 'bob@example.com', password: 'invalid'
 
         expect(last_response.status).to eq(422)
         expect(response_body['errors']).to include('detail' => 'Сессия не может быть создана')
@@ -29,7 +29,7 @@ RSpec.describe SessionRoutes, type: :routes do
       end
 
       it 'returns created status' do
-        post '/v1', email: 'bob@example.com', password: 'givemeatoken'
+        post '/', email: 'bob@example.com', password: 'givemeatoken'
 
         expect(last_response.status).to eq(201)
         expect(response_body['meta']).to eq('token' => token)

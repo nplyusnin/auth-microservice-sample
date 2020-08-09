@@ -15,10 +15,4 @@ class Application < Sinatra::Base
 
     set :show_exceptions, false
   end
-
-  get '/' do
-    status 200
-
-    json page_size: Settings.pagination.page_size
-  end
 end
