@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Auth
   class FetchUserService
     prepend BasicService
@@ -8,6 +10,7 @@ module Auth
 
     def call
       return fail!(I18n.t(:forbidden, scope: 'services.auth.fetch_user_service')) if @uuid.blank? || session.blank?
+
       @user = session.user
     end
 

@@ -23,6 +23,12 @@ gem 'dry-validation'
 gem 'activesupport'
 gem 'fast_jsonapi'
 
+gem 'jwt'
+
+group :development, :test do
+  gem 'byebug'
+end
+
 group :development do
   gem 'sequel-seed'
 end
