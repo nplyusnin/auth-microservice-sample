@@ -24,6 +24,7 @@ gem 'activesupport'
 gem 'fast_jsonapi'
 
 gem 'jwt'
+gem 'bunny'
 
 group :development, :test do
   gem 'byebug'
