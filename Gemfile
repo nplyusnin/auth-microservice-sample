@@ -9,6 +9,9 @@ gem 'rake'
 
 gem 'sinatra', require: 'sinatra/base'
 gem 'sinatra-contrib'
+gem 'rack-ougai'
+gem 'rack-request-id'
+gem 'amazing_print'
 
 gem 'config'
 gem 'i18n'

@@ -1,3 +1,5 @@
+app:
+  name: auth
 db:
   adapter: postgresql
   host: localhost
@@ -7,3 +9,6 @@ pagination:
   page_size: 10
 app:
   secret: 'my_super_secret'
+logger:
+  path: log/app.log
+  level: info
